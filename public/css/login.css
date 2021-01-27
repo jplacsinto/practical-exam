@@ -27,7 +27,7 @@ input[type=submit]{
 
 
 .form-container {
-	width: 25%;
+	width: 420px;
 	padding: 30px 30px 0 60px;
 }
 
@@ -69,4 +69,16 @@ input[type=submit]{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .bg-content{
+  	display: none;
+  }
+
+	/*.form-container {
+		width: 100%;
+		padding: 30px;
+	}*/
 }
