@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Interest;
 
 class RegisterController extends Controller
 {
@@ -39,6 +40,21 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function showRegistrationForm()
+    {
+        $data = [
+            'first_name' => null,
+            'last_name' => null,
+            'contact_no' => null,
+            'birthday' => null,
+            'role_id' => null,
+            'email' => null,
+            'interests' => null,
+            'allInterests' => Interest::pluck('name', 'id')->toArray()
+        ];
+        return view('auth.register', $data);
     }
 
     /**
